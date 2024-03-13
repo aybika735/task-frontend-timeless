@@ -1,0 +1,73 @@
+.sidebar {
+  width: 332px;
+  background: rgba(30, 32, 39, 1);
+  border-radius: 16px;
+  padding: 25px;
+  box-sizing: border-box;
+
+  div {
+    font-family: Jura;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: left;
+  }
+}
+
+hr {
+  width: 284px;
+  border: none;
+  height: 1px;
+  background: rgba(48, 50, 56, 1);
+}
+
+.section_age,
+.section_gender {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.users_length {
+  margin-bottom: 20px;
+}
+
+.section_age {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0;
+  text-align: left;
+}
+
+.section_gender,
+.section_users {
+  span {
+    color: rgba(140, 137, 136, 1);
+    font-family: Jura;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0;
+    margin-right: 0 20px 0 0;
+  }
+}
+.section_gender,
+.age_range_group {
+  span {
+    margin-right: 20px;
+    width: 50px;
+  }
+}
+.age_range_group {
+  display: flex;
+  margin-bottom: 15px;
+
+  strong {
+    font-family: Jura;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: left;
+  }
+}

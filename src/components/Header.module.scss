@@ -1,0 +1,32 @@
+.header {
+  width: 1376px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    width: 132px;
+    height: 40px;
+    line-height: 40px;
+    padding: 4px 0 4px, 0px;
+    color: #cf7b5a;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Jura;
+    cursor: pointer;
+  }
+}
+
+input {
+  width: 332px;
+  height: 52px;
+  padding: 14px, 16px, 14px, 16px;
+  border-radius: 16px;
+  background: rgba(30, 32, 39, 1);
+  border: none;
+  padding-left: 10px !important;
+
+  &:focus {
+    outline: none;
+  }
+}
