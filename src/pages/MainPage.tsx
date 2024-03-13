@@ -1,24 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { fetchTodos } from "../app/slices/todoSlice";
+
+import { ICardProps, fetchTodos } from "../app/slices/todoSlice";
 import UserCards from "../components/UserCards";
 import SideBar from "../components/SideBar";
+import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 
-const MainPage = ({ search }) => {
-  const dispatch = useDispatch();
+interface MainPageProps {
+  search: string;
+}
 
-  const todos = useSelector((state) => state.todosSlice.todos);
- 
-  const [users, setUsers] = useState([]);
+const MainPage: React.FC<MainPageProps> = ({ search }) => {
+  const dispatch = useAppDispatch();
+
+  const todos = useAppSelector((state) => state.todosSlice.todos);
+
+  const [users, setUsers] = useState<ICardProps[]>([]);
 
   useEffect(() => {
     dispatch(fetchTodos());
   }, [dispatch]);
 
   useEffect(() => {
-    setUsers(todos); 
+    setUsers(todos);
   }, [todos]);
-
 
   useEffect(() => {
     const filteredUsers = todos.filter((user) => {
@@ -27,8 +31,10 @@ const MainPage = ({ search }) => {
         day: "numeric",
         month: "long",
         year: "numeric",
-      }).format(new Date(user.dob.date)).toLowerCase();
-      
+      })
+        .format(new Date(user.dob.date))
+        .toLowerCase();
+
       return (
         fullName.includes(search.toLowerCase()) ||
         user.email.toLowerCase().includes(search.toLowerCase()) ||
@@ -40,23 +46,18 @@ const MainPage = ({ search }) => {
       );
     });
 
-    setUsers(filteredUsers); 
+    setUsers(filteredUsers);
   }, [search, todos]);
 
-
-  const onDelete = (id) => {
-    setUsers(users.filter(user => user.login.salt !== id));
+  const onDelete = (id: number) => {
+    setUsers(users.filter((user) => user.login.salt !== id));
   };
 
   return (
-    <div className={search.length>0 ? "search_main_container": "main_container" }>
-    
-      <UserCards 
-      todos={users} 
-      onDelete={onDelete}  
-     
-      search = {search}
-      />
+    <div
+      className={search.length > 0 ? "search_main_container" : "main_container"}
+    >
+      <UserCards todos={users} onDelete={onDelete} search={search} />
       <SideBar />
     </div>
   );
