@@ -1,7 +1,7 @@
 import React from "react";
-import { useAppDispatch } from "../hooks/hooks";
-import { fetchTodos } from "../app/slices/todoSlice";
-import styles from "./Header.module.scss";
+import { useAppDispatch } from "../../hooks/use-ape-dispatch";
+import { fetchTodos } from "../../app/slices/todoSlice";
+import styles from "./header.module.scss";
 interface HeaderProps {
   search: string;
   setSearch: (value: string) => void;
@@ -20,7 +20,7 @@ const Header = ({ search, setSearch }: HeaderProps) => {
       <input
         type="text"
         value={search}
-        onChange={(e) => handleSearch(e)}
+        onChange={handleSearch}
         placeholder="Search"
       />
       <div onClick={handleRefresh}>Refresh Users</div>

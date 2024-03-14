@@ -22,16 +22,16 @@ hr {
   background: rgba(48, 50, 56, 1);
 }
 
-.section_age,
-.section_gender {
+.sectionAge,
+.sectionGender {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.users_length {
+.usersLength {
   margin-bottom: 20px;
 }
 
-.section_age {
+.sectionAge {
   font-size: 16px;
   font-weight: 600;
   line-height: 20px;
@@ -39,8 +39,8 @@ hr {
   text-align: left;
 }
 
-.section_gender,
-.section_users {
+.sectionGender,
+.sectionUsers {
   span {
     color: rgba(140, 137, 136, 1);
     font-family: Jura;
@@ -51,14 +51,14 @@ hr {
     margin-right: 0 20px 0 0;
   }
 }
-.section_gender,
-.age_range_group {
+.sectionGender,
+.ageRangeGroup {
   span {
     margin-right: 20px;
     width: 50px;
   }
 }
-.age_range_group {
+.ageRangeGroup {
   display: flex;
   margin-bottom: 15px;
 

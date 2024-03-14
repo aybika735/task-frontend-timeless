@@ -5,7 +5,7 @@
   padding-right: 3px;
   overflow-x: hidden;
 }
-.search_scroll{
+.searchScroll{
   height: 100%;
   width: 99%;
   padding-right: 14px;
@@ -21,7 +21,7 @@
 
 
 }
-.search_section{
+.searchSection{
   width: 100%;
   display: flex!important;
   flex-wrap: wrap;
@@ -53,10 +53,10 @@
   padding: 20px;
   position: relative;
 
-  &.card_active {
+  &.cardActive {
     border: 1px solid rgba(207, 123, 90, 0.2);
   }
-  .delete_icon {
+  .deleteIcon {
     visibility: visible;
     opacity: 1;
     position: absolute;
@@ -67,7 +67,7 @@
     cursor: pointer;
     fill: #ac2b16 !important;
   }
-  .border_radius_delete {
+  .borderRadiusDelete {
     width: 24px;
     height: 24px;
     padding: 10px;
@@ -80,10 +80,10 @@
     background: rgba(75, 78, 91, 0.1);
   }
 }
-.user_card_header {
+.userCardHeader {
   display: flex;
 
-  .user_image {
+  .userImage {
     margin-right: 20px;
     display: flex;
     align-items: center;
@@ -95,7 +95,7 @@
       display: block;
     }
   }
-  .user_name {
+  .userName {
     font-size: 20px;
     font-weight: 600;
     display: flex;
@@ -106,7 +106,7 @@
     }
   }
 
-  .user_email {
+  .userEmail {
     width: 210px;
     font-size: 14px;
     font-weight: 500;
@@ -116,11 +116,11 @@
   }
 }
 
-.info_item {
+.infoItem {
   display: flex;
 
-  .info_title,
-  .info_text {
+  .infoTitle,
+  .infoText {
     color: rgba(140, 137, 136, 1);
     font-size: 12px;
     font-weight: 500;

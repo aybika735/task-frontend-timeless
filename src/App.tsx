@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Header from "./components/Header";
+import Header from "./components/header/index";
 import MainPage from "./pages/MainPage";
 
 function App() {

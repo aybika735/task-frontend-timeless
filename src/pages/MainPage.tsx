@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
 
-import { ICardProps, fetchTodos } from "../app/slices/todoSlice";
-import UserCards from "../components/UserCards";
-import SideBar from "../components/SideBar";
-import { useAppDispatch, useAppSelector } from "../hooks/hooks";
+import {  fetchTodos } from "../app/slices/todoSlice";
+import { ICardProps } from "../components/user-cards/types";
+import UserCards from "../components/user-cards/index";
+import SideBar from "../components/side-bar/index";
+import { useAppDispatch } from "../hooks/use-ape-dispatch";
+import { useAppSelector } from "../hooks/use-ape-selector";
+import styles from './main-page.module.scss'
 
 interface MainPageProps {
   search: string;
 }
 
-const MainPage: React.FC<MainPageProps> = ({ search }) => {
+const MainPage = ({ search }: MainPageProps) => {
   const dispatch = useAppDispatch();
-
-  const todos = useAppSelector((state) => state.todosSlice.todos);
-
   const [users, setUsers] = useState<ICardProps[]>([]);
+  const todos = useAppSelector((state) => state.todosSlice.todos);
 
   useEffect(() => {
     dispatch(fetchTodos());
@@ -55,7 +56,7 @@ const MainPage: React.FC<MainPageProps> = ({ search }) => {
 
   return (
     <div
-      className={search.length > 0 ? "search_main_container" : "main_container"}
+      className={search.length > 0 ? styles.searchMainContainer : styles.mainContainer}
     >
       <UserCards todos={users} onDelete={onDelete} search={search} />
       <SideBar />
